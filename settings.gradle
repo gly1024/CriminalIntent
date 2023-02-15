@@ -1,0 +1,49 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+        maven {
+            allowInsecureProtocol = true
+            url'http://maven.aliyun.com/nexus/content/groups/public/'}
+        maven {
+            allowInsecureProtocol = true
+            url'https://maven.aliyun.com/repository/public/' }
+        maven {
+            allowInsecureProtocol = true
+            url'https://maven.aliyun.com/repository/google/' }
+        maven {
+            allowInsecureProtocol = true
+            url'https://maven.aliyun.com/repository/jcenter/' }
+        maven {
+            allowInsecureProtocol = true
+            url'https://maven.aliyun.com/repository/central/' }
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven {
+            allowInsecureProtocol = true
+            url "https://oss.sonatype.org/content/repositories/snapshots" }
+        maven {
+            allowInsecureProtocol = true
+            url'http://maven.aliyun.com/nexus/content/groups/public/'}
+        maven {
+            allowInsecureProtocol = true
+            url'https://maven.aliyun.com/repository/public/' }
+        maven {
+            allowInsecureProtocol = true
+            url'https://maven.aliyun.com/repository/google/' }
+        maven {
+            allowInsecureProtocol = true
+            url'https://maven.aliyun.com/repository/jcenter/' }
+        maven {
+            allowInsecureProtocol = true
+            url'https://maven.aliyun.com/repository/central/' }
+    }
+}
+rootProject.name = "CriminalIntent"
+include ':app'
