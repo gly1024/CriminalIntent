@@ -11,11 +11,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.EditText;
 
+import com.jack.criminalintent.CrimeActivity;
 import com.jack.criminalintent.R;
 import com.jack.criminalintent.data.Crime;
+import com.jack.criminalintent.data.CrimeLab;
+
+import java.text.DateFormat;
+import java.util.UUID;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -35,7 +39,9 @@ public class CrimeFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mCrime = new Crime();
+        UUID crimeId = (UUID) getActivity().getIntent()
+            .getSerializableExtra(CrimeActivity.getExtraCrimeIdKey());
+        mCrime = CrimeLab.getInstance(getActivity()).getCrime(crimeId);
     }
 
     @Override
@@ -49,10 +55,12 @@ public class CrimeFragment extends Fragment {
 
     private void initView(View view) {
         mTitleEditView = view.findViewById(R.id.crime_title);
+        mTitleEditView.setText(mCrime.getTitle());
         mDateButton = view.findViewById(R.id.crime_date);
-        mDateButton.setText(mCrime.getDate().toString());
+        mDateButton.setText(DateFormat.getInstance().format(mCrime.getDate()));
         mDateButton.setEnabled(false);
         mSolvedCheckBox = view.findViewById(R.id.crime_solved);
+        mSolvedCheckBox.setChecked(mCrime.isSolved());
         mSolvedCheckBox.setOnCheckedChangeListener((buttonView, isChecked) ->
             mSolvedCheckBox.setChecked(isChecked));
         mTitleEditView.addTextChangedListener(new TextWatcher() {

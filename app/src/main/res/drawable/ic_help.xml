@@ -1,0 +1,31 @@
+<!--
+  ~ Copyright (C) 2023-2023 The Gongliangyi Authors. All rights reserved.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~  you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~ http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~  See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="50dp"
+    android:height="50dp"
+    android:viewportWidth="1024"
+    android:viewportHeight="1024">
+  <path
+      android:pathData="M0,0h1024v1024H0z"
+      android:fillColor="#FFFFFF"/>
+  <path
+      android:pathData="M768,224a32,32 0,0 1,32 32v554.67a32,32 0,0 1,-32 32H476.84l-163.86,81.96a32,32 0,0 1,-46.19 -25.81L266.67,896v-53.33H128a32,32 0,0 1,-31.85 -28.93L96,810.67V256A32,32 0,0 1,128 224zM480,661.33h-64v64h64v-64zM448,352a117.33,117.33 0,0 0,-117.33 117.33h64l0.11,-3.5A53.33,53.33 0,1 1,448 522.67l-3.07,0.15A32,32 0,0 0,416 554.67v71.1h64v-43.52l4.22,-1.28A117.33,117.33 0,0 0,448 352z"
+      android:fillColor="#111111"/>
+  <path
+      android:pathData="M917.33,74.67a32,32 0,0 1,31.85 28.93L949.33,106.67v448a32,32 0,0 1,-28.93 31.85L917.33,586.67h-60.18V228.16a64.11,64.11 0,0 0,-64 -64.04L373.33,163.88h-64V106.67a32,32 0,0 1,28.93 -31.85L341.33,74.67h576z"
+      android:fillColor="#111111"/>
+</vector>
