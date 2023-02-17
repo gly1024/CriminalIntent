@@ -22,6 +22,9 @@
             android:name=".CrimeActivity"
             android:exported="false">
         </activity>
+        <activity
+            android:name=".CrimePagerActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

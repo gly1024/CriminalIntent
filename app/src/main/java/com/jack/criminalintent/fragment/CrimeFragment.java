@@ -29,18 +29,33 @@ import java.util.UUID;
  */
 public class CrimeFragment extends Fragment {
     private static final String TAG = "CrimeFragment";
+    
+    private static final String ARG_CRIME_ID = "crime_id";
 
     private Crime mCrime;
 
     private EditText mTitleEditView;
     private Button mDateButton;
     private CheckBox mSolvedCheckBox;
+    
+    public static CrimeFragment newInstance(UUID crimeId) {
+        Bundle args = new Bundle();
+        args.putSerializable(ARG_CRIME_ID, crimeId);
+
+        CrimeFragment crimeFragment = new CrimeFragment();
+        crimeFragment.setArguments(args);
+        return crimeFragment;
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        UUID crimeId = (UUID) getActivity().getIntent()
-            .getSerializableExtra(CrimeActivity.getExtraCrimeIdKey());
+        // Method 1
+        /*UUID crimeId = (UUID) getActivity().getIntent()
+            .getSerializableExtra(CrimeActivity.getExtraCrimeIdKey());*/
+
+        // Method 2
+        UUID crimeId = (UUID) getArguments().getSerializable(ARG_CRIME_ID);
         mCrime = CrimeLab.getInstance(getActivity()).getCrime(crimeId);
     }
 
@@ -66,17 +81,14 @@ public class CrimeFragment extends Fragment {
         mTitleEditView.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
             }
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-
             }
 
             @Override
             public void afterTextChanged(Editable s) {
-
             }
         });
     }
