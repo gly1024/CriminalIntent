@@ -102,6 +102,7 @@ public class CrimeListFragment extends Fragment {
             mCirmeAdapter = new CrimeAdapter(crimes);
             mCrimeRecyclerView.setAdapter(mCirmeAdapter);
         } else {
+            mCirmeAdapter.setCrimes(crimes);
             //刷新全部item
             mCirmeAdapter.notifyDataSetChanged();
             // 如何局部刷新单个item
@@ -182,6 +183,10 @@ public class CrimeListFragment extends Fragment {
         @Override
         public int getItemCount() {
             return mCrimes.size();
+        }
+
+        public void setCrimes(List<Crime> crimes) {
+            mCrimes = crimes;
         }
     }
 }
