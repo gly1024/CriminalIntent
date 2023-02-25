@@ -15,4 +15,13 @@
     <string name="subtitle_format">%1$d crimes</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="crime_suspect_text">Choose Suspect</string>
+    <string name="crime_report_text">Send Crime Report</string>
+    <string name="crime_report">%1$s.! The Crime was discovered on %2$s. %3$s, and %4$s</string>
+    <string name="crime_report_solved">The Case is Solved</string>
+    <string name="crime_report_unsolved">The Case is not Solved</string>
+    <string name="crime_report_no_suspect">there is no suspect.</string>
+    <string name="crime_report_suspect">the suspect is %s.</string>
+    <string name="crime_report_subject">CriminalIntent Crime Report</string>
+    <string name="send_report">Send crime report via</string>
 </resources>

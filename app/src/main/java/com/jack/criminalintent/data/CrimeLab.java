@@ -10,6 +10,7 @@ import com.jack.criminalintent.database.CrimeCursorWrapper;
 import com.jack.criminalintent.database.CrimeDbSchema;
 import com.jack.criminalintent.database.CrimeDbSchema.CrimeTable;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -76,6 +77,7 @@ public class CrimeLab {
         contentValues.put(CrimeTable.Cols.TITLE, crime.getTitle());
         contentValues.put(CrimeTable.Cols.DATE, crime.getDate().toString());
         contentValues.put(CrimeTable.Cols.SOLVED, crime.isSolved() ? 1 : 0);
+        contentValues.put(CrimeTable.Cols.SUSPECT, crime.getSuspect());
 
         return contentValues;
     }
@@ -99,5 +101,10 @@ public class CrimeLab {
             null
         );
         return new CrimeCursorWrapper(cursor);
+    }
+
+    public File getPhotoFile(Crime crime) {
+        File filesDir = mContext.getFilesDir();
+        return new File(filesDir, crime.getPhotoFileName());
     }
 }
